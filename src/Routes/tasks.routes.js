@@ -7,9 +7,9 @@ import { createSchema } from "../Schemas/task.schema.js";
 const router = Router();
 
 router.get('/tasks', authRequired, getTasks)
-router.get('/tasks/:id', authRequired, getTask)
-router.post('/tasks', authRequired, validateSchema(createSchema), createTask)
-router.put('/tasks/:id', authRequired, updateTask)
-router.delete('/tasks/:id', authRequired, deleteTask)
+router.get('/task/:id', authRequired, getTask)
+router.post('/task', authRequired, validateSchema(createSchema), createTask)
+router.put('/task/:id', authRequired, updateTask)
+router.delete('/task/:id', authRequired, deleteTask)
 
 export default router

@@ -24,15 +24,15 @@ function Login() {
   });
 
   const inputStyles =
-    "w-[80%] rounded-md p-1.5 my-2 border bg-gray-200 border-sky-200 bg-transparent focus:outline-sky-300";
+    "w-[80%] rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400";
 
   return (
     <div className="flex w-[100%] h-[100%] justify-center items-center">
       <form
         onSubmit={onSubmit}
-        className="flex bg-slate-50 justify-center items-center flex-col w-[30%] h-64 rounded-lg drop-shadow-lg"
+        className="flex bg-slate-50 justify-center items-center flex-col w-[80%] md:w-[30%] min-h-max rounded-lg drop-shadow-lg"
       >
-        <h1 className="w-full text-center text-sky-600 text-xl font-bold">
+        <h1 className="w-full text-center text-purple-700 text-xl font-bold">
           Inicio de sesión
         </h1>
         <div className="bg-red-200 w-[80%] rounded-md my-3 max-h-min">
@@ -71,12 +71,12 @@ function Login() {
         )}
         <Link
           to="/register"
-          className="text-sm text-left w-[80%] text-sky-600 hover:text-sky-700 my-2"
+          className="text-sm text-left w-[80%] text-purple-500 hover:text-purple-900 my-2"
         >
           ¿No tienes una cuenta?
         </Link>
         <button
-          className="w-[80%] bg-sky-600 hover:bg-sky-700 transition-all duration-200 rounded-md p-1.5 my-2 text-white"
+          className="w-[80%] bg-purple-700 hover:bg-purple-800 transition-all duration-200 rounded-md p-1.5 my-2 text-white mb-5"
           type="submit"
         >
           Inicia sesión

@@ -1,5 +1,5 @@
 {
-  "name": "aplicacion-de-tarea---mern",
+  "name": "proyecto-system-aplicacion-tarea",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Camilo López - Natalia Sanchez - Kylie Camargo - Kenner Pacheco - Steven Baussa",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

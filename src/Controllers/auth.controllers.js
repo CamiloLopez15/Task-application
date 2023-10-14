@@ -73,9 +73,49 @@ export const profile = async (req, res) => {
     id: userFound._id,
     username: userFound.username,
     email: userFound.email,
+    password: userFound.password,
     createdAt: userFound.createdAt,
     updatedAt: userFound.updatedAt,
   });
+};
+
+export const updateProfile = async (req, res) => {
+  const { username, email } = req.body;
+  const userFound = await User.findById(req.user.id);
+  
+  if (!userFound) return res.status(401).json({ message: "User not found" });
+  console.log(req.body);
+  // const passwordHash = await bcrypt.hash(password, 10);
+  const newUser = await User.findByIdAndUpdate(
+    req.user.id,
+    {
+      username,
+      email,
+    },
+    {
+      new: true,
+    }
+  );
+  res.status(200).json(newUser);
+};
+
+export const updatePassword = async (req, res) => {
+  const { password } = req.body;
+  const userFound = await User.findById(req.user.id);
+  if (!userFound) return res.status(401).json({ message: "User not found" });
+  console.log(req.body);
+
+  const passwordHash = await bcrypt.hash(password, 10);
+  const newUser = await User.findByIdAndUpdate(
+    req.user.id,
+    {
+      password: passwordHash,
+    },
+    {
+      new: true,
+    }
+  );
+  res.status(200).json(newUser);
 };
 
 export const verifyToken = async (req, res) => {
@@ -91,6 +131,6 @@ export const verifyToken = async (req, res) => {
       id: userFound._id,
       username: userFound.username,
       email: userFound.email,
-    })
+    });
   });
 };
