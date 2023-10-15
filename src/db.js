@@ -5,7 +5,7 @@ import { URI_BACKEND } from "./config.js";
 export const connectDB = async () => {
   try {
     await mongoose.connect(URI_BACKEND)
-    
+
     console.log(">>> Conexión a la basa de datos exitosa")
   } catch (error) {
     console.log("La conexión a la basa de datos fracasó");

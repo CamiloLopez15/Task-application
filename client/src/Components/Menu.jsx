@@ -29,17 +29,17 @@ function Menu() {
             <Link to="/tasks">Tareas</Link>
           </li>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline">
-            <Link>Crear tarea</Link>
+            <Link to="/profile">Profile</Link>
           </li>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline">
             <Link onClick={() => logout()} to="/">
               {" "}
-              Cerra sesión
+              Cerrar sesión
             </Link>
           </li>
         </ul>
         {/* Responsive Menu  */}
-        <ul className={`${responsiveMenu ? "left-0": "left-[200%]"} flex w-full flex-col top-16 right-0 absolute bg-purple-700 justify-evenly items-center font-onest text-slate-50 md:hidden transition-all duration-300`}>
+        <ul className={`${responsiveMenu ? "left-0 flex": "left-[200%] hidden"} w-full flex-col top-16 right-0 absolute bg-purple-700 justify-evenly items-center font-onest text-slate-50 md:hidden transition-all duration-500`}>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline my-1.5">
             <Link
               to="/tasks"

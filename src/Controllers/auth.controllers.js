@@ -82,21 +82,31 @@ export const profile = async (req, res) => {
 export const updateProfile = async (req, res) => {
   const { username, email } = req.body;
   const userFound = await User.findById(req.user.id);
-  
   if (!userFound) return res.status(401).json({ message: "User not found" });
-  console.log(req.body);
-  // const passwordHash = await bcrypt.hash(password, 10);
-  const newUser = await User.findByIdAndUpdate(
-    req.user.id,
-    {
-      username,
-      email,
-    },
-    {
-      new: true,
+
+  const validateData = () => {
+    if (!username && email) {
+      return {
+        email,
+      };
     }
-  );
-  res.status(200).json(newUser);
+    if (username && !email) {
+      return {
+        username,
+      };
+    }
+    if (username && email) {
+      return {
+        username,
+        email,
+      };
+    } else return {};
+  };
+
+  const newUser = await User.findByIdAndUpdate(req.user.id, validateData(), {
+    new: true,
+  });
+  res.status(200).json({message: "Datos actulizados"});
 };
 
 export const updatePassword = async (req, res) => {
