@@ -12,11 +12,12 @@ function Menu() {
     console.log("Cerrando sesión");
   };
   return (
-    <nav className="flex justify-between items-center w-full bg-purple-700 p-4">
+    <nav className="flex justify-between items-center w-full bg-blue-800 p-4">
       <Link
         to="/"
-        className="text-2xl font-gabarito font-extrabold text-slate-50 tracking-wide"
+        className="flex text-2xl font-gabarito font-extrabold text-slate-50 tracking-wide"
       >
+        <img className="h-8 mr-2" src="Logo-Aplicacion-de-tareas-removebg-preview.png"/>
         Task application
       </Link>
       <div>

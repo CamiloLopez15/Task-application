@@ -2,28 +2,31 @@ import { useState } from "react";
 import Menu from "../Components/Menu.jsx";
 import axios from "./../api/axios.js";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const [errorsPassword, setErrorsPassword] = useState([]);
-  // const [changesLoaded, setChangesLoaded] = useState([]);
+  const [changesLoaded, setChangesLoaded] = useState(null);
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (values) => {
     try {
       const { username, email } = values;
-      const res = await axios.put('/profile', {
+      const res = await axios.put("/profile", {
         username,
-        email
+        email,
       });
-      reset({username: "", email: "" });
-      console.log(res.data);
+      reset({ username: "", email: "" });
+      setChangesLoaded(res.data.message);
+      setTimeout(() => setChangesLoaded(null), 5000);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   });
 
@@ -32,17 +35,20 @@ function Profile() {
       const { password, confirmPassword } = values;
       if (!(password === confirmPassword)) {
         setTimeout(() => setErrorsPassword([]), 5000);
-        console.log(errorsPassword)
+        console.log(errorsPassword);
         return setErrorsPassword(["Las contraseñas son distintas"]);
       }
       setErrorsPassword([]);
-      await axios.put('/updatePassword', {
-        password
+      const res = await axios.put("/updatePassword", {
+        password,
       });
+      setChangesLoaded(res.data.message);
+      setTimeout(() => setChangesLoaded(null), 5000);
+      reset({ password: "", confirmPassword: "" });
       await axios.post("/logout");
-      reset({password: "", confirmPassword: "" });
+      navigate("/")
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   });
 
@@ -50,15 +56,22 @@ function Profile() {
     <div>
       <Menu />
       {errorsPassword.map((error, i) => {
-            return (
-              <p
-                className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
-                key={i}
-              >
-                {error}
-              </p>
-            );
-          })}
+        return (
+          <p
+            className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
+            key={i}
+          >
+            {error}
+          </p>
+        );
+      })}
+      {changesLoaded ? (
+        <p className="text-green-500 w-[46.6%] rounded-md text-left bg-green-200 p-1 mx-4 mt-4">
+          {changesLoaded}
+        </p>
+      ) : (
+        ""
+      )}
       <section className="p-4">
         <h1 className="text-md md:font-extrabold font-semibold text-center md:text-left md:w-[60%] w-full p-4 bg-purple-700 text-white rounded-md">
           Actualizar nombre de usuario y email

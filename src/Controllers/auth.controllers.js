@@ -106,7 +106,7 @@ export const updateProfile = async (req, res) => {
   const newUser = await User.findByIdAndUpdate(req.user.id, validateData(), {
     new: true,
   });
-  res.status(200).json({message: "Datos actulizados"});
+  res.status(200).json({message: "Datos actualizados correctamente", data: newUser});
 };
 
 export const updatePassword = async (req, res) => {
@@ -125,7 +125,7 @@ export const updatePassword = async (req, res) => {
       new: true,
     }
   );
-  res.status(200).json(newUser);
+  res.status(200).json({ message: "Contraseña actualizada correctamente", data: newUser});
 };
 
 export const verifyToken = async (req, res) => {

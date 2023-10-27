@@ -34,15 +34,19 @@ export default function Taskspage() {
 
   useEffect(() => {
     async function getTasks() {
-      const newTasks = [];
-      const newMadeTasks = [];
-      const res = await axios.get("/tasks");
-      res.data.map((task) => {
-        if (task.isActive) return newTasks.push(task);
-        else return newMadeTasks.push(task);
-      });
-      setTasks(newTasks);
-      setMadetasks(newMadeTasks);
+      try {
+        const newTasks = [];
+        const newMadeTasks = [];
+        const res = await axios.get("/tasks");
+        res.data.map((task) => {
+          if (task.isActive) return newTasks.push(task);
+          else return newMadeTasks.push(task);
+        });
+        setTasks(newTasks);
+        setMadetasks(newMadeTasks);
+      } catch (error) {
+        console.log(error);
+      }
     }
     getTasks();
   }, [update]);

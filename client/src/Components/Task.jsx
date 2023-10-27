@@ -16,8 +16,8 @@ function Task({ task, taskDone, deleteTask, setTaskModifier, setTaskForEdit }) {
           Realizar
         </button>
         <button
-          onClick={async() => {
-            await setTaskForEdit(task)
+          onClick={async () => {
+            await setTaskForEdit(task);
             setTaskModifier(true);
           }}
           className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-blue-700"
