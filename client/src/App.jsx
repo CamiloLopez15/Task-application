@@ -6,6 +6,7 @@ import Taskspage from "./Pages/Taskspage";
 import ProtectedRoute from "./ProtectedRoute";
 import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
+import SpinnerLoading from "./Components/SpinnerLoading";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepages />} />
+          <Route path="/spinner" element={<SpinnerLoading />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route element={<ProtectedRoute />}>

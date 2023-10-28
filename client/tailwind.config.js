@@ -9,7 +9,7 @@ export default {
       fontFamily: {
         onest: 'Onest, sans-serif',
         gabarito: 'Gabarito, sans-serif'
-      }
+      },
     },
   },
   plugins: [],

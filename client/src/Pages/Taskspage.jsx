@@ -64,7 +64,7 @@ export default function Taskspage() {
         </button>
       </header>
       <section>
-        <div className="flex flex-wrap justify-center md:justify-start">
+        <div className="flex min-h-max flex-wrap justify-center md:justify-start">
           {tasks.map((task) => (
             <Task
               key={task._id}

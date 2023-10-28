@@ -1,7 +1,9 @@
 import { PropTypes } from "prop-types";
 import { useForm } from "react-hook-form";
 import { AiOutlineClose } from "react-icons/ai";
+
 import axios from "./../api/axios.js";
+
 
 function TaskCreator({ taskCreator, setTaskCreator, setUpdate, update }) {
   const {
@@ -28,8 +30,8 @@ function TaskCreator({ taskCreator, setTaskCreator, setUpdate, update }) {
   return (
     <div
       className={`${
-        taskCreator ? "flex" : "hidden"
-      } flex-col absolute w-[60%] min-h-max bg-slate-50 top-[25%] left-[20%] shadow-lg rounded-md border border-neutral-300`}
+        taskCreator ? "top-[25%] opacity-100" : "-top-full opacity-0"
+      } transition-all duration-300 flex flex-col absolute w-[60%] min-h-max bg-slate-50 left-[20%] shadow-lg rounded-md border border-neutral-300`}
     >
       <button
         onClick={() => setTaskCreator(false)}

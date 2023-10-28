@@ -1,15 +1,20 @@
 import { PropTypes } from "prop-types";
+import { motion } from "framer-motion";
 
 function MadeTask({ task, deleteTask, taskDone }) {
   return (
-    <div
+    <motion.div
+      initial={{ left: 1000, opacity: 0  }}
+      animate={{ left: 10, opacity: 1 }}
+      exit={{ bottom: 20, opacity: 0 }}
+      transition={{ duration: 0.4 }}
       key={task._id}
-      className="flex flex-col p-4 w-72 min-w-max border border-neutral-200 shadow-xl rounded-r-md m-5 hover:scale-105 transition-all duration-200 min-h-max"
+      className="flex flex-col p-4 w-72 min-w-max border border-neutral-200 shadow-xl rounded-r-md m-5 hover:scale-105 transition-all duration-200 min-h-max relative"
     >
       <h1 className="text-xl font-semibold text-neutral-600">{task.tittle}</h1>
       <p className="text-sm text-neutral-600">{task.description}</p>
       <div>
-      <button
+        <button
           onClick={() => taskDone(task, true)}
           className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-neutral-400 hover:bg-green-700 transition-all duration-200"
         >
@@ -22,7 +27,7 @@ function MadeTask({ task, deleteTask, taskDone }) {
           Eliminar
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

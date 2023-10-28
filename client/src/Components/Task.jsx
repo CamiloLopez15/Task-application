@@ -1,10 +1,14 @@
 import { PropTypes } from "prop-types";
+import { motion } from "framer-motion";
 
 function Task({ task, taskDone, deleteTask, setTaskModifier, setTaskForEdit }) {
   return (
-    <div
+    <motion.div
+      initial={{left: 1000}}
+      animate={{left: 10}}
+      transition={{duration: 0.4}}
       key={task._id}
-      className="flex flex-col p-4 w-72 min-w-max border border-neutral-200 shadow-xl rounded-r-md m-5 hover:scale-105 transition-all duration-200 min-h-max"
+      className="flex flex-col p-4 w-72 min-w-max border border-neutral-200 shadow-xl rounded-r-md m-5 hover:scale-105 transition-all duration-200 min-h-max relative"
     >
       <h1 className="text-xl font-semibold text-blue-700">{task.tittle}</h1>
       <p className="text-sm text-neutral-600">{task.description}</p>
@@ -31,7 +35,7 @@ function Task({ task, taskDone, deleteTask, setTaskModifier, setTaskForEdit }) {
           Eliminar
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

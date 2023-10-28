@@ -1,9 +1,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { UseAuth } from "./Context/authContext";
+import SpinnerLoading from "./Components/SpinnerLoading";
 
 function ProtectedRoute() {
   const { isAuthenticated, loading } = UseAuth();
-  if(loading) return <h1>Loading...</h1>
+  if(loading) return <SpinnerLoading />
   if(!isAuthenticated && !loading) return <Navigate to="/login" replace />
   if (isAuthenticated && !loading) return <Outlet />;
 }

@@ -30,8 +30,8 @@ function TaskModifier({ taskForEdit, taskModifier, setTaskModifier, setUpdate, u
   return (
     <div
       className={`${
-        taskModifier ? "flex" : "hidden"
-      } flex-col absolute w-[60%] min-h-max bg-slate-50 top-[25%] left-[20%] shadow-lg rounded-md border border-neutral-300`}
+        taskModifier ? "top-[25%] opacity-100" : "-top-full opacity-0"
+      } transition-all duration-300 flex flex-col absolute w-[60%] min-h-max bg-slate-50 left-[20%] shadow-lg rounded-md border border-neutral-300`}
     >
       <button
         onClick={() => setTaskModifier(false)}

@@ -3,6 +3,7 @@ import Menu from "../Components/Menu.jsx";
 import axios from "./../api/axios.js";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Profile() {
   const [errorsPassword, setErrorsPassword] = useState([]);
@@ -54,8 +55,12 @@ function Profile() {
 
   return (
     <>
-        <Menu />
-      <div className="w-full flex flex-col">
+      <Menu />
+      <motion.div 
+        initial={{marginTop: -100}}
+        animate={{marginTop: 0}}
+        transition={{duration: 0.5}}
+      className="w-full flex flex-col">
         {errorsPassword.map((error, i) => {
           return (
             <p
@@ -170,7 +175,7 @@ function Profile() {
             </button>
           </form>
         </section>
-      </div>
+      </motion.div>
     </>
   );
 }
