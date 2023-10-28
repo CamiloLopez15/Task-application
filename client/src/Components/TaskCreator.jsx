@@ -23,7 +23,7 @@ function TaskCreator({ taskCreator, setTaskCreator, setUpdate, update }) {
   });
 
   const inputStyles =
-    "w-[60%] rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400";
+    "w-[60%] rounded-md p-1.5 my-2 border bg-gray-200 border-blue-300 bg-transparent focus:outline-blue-400";
 
   return (
     <div
@@ -71,7 +71,7 @@ function TaskCreator({ taskCreator, setTaskCreator, setUpdate, update }) {
           )}
           <button
             type="submit"
-            className="w-[60%] m-2 p-1.5 bg-purple-700 text-white text-base font-gabarito font-semibold rounded-md"
+            className="w-[60%] m-2 p-1.5 bg-blue-700 text-white text-base font-gabarito font-semibold rounded-md"
           >
             Crear tarea
           </button>

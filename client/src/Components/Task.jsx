@@ -6,12 +6,12 @@ function Task({ task, taskDone, deleteTask, setTaskModifier, setTaskForEdit }) {
       key={task._id}
       className="flex flex-col p-4 w-72 min-w-max border border-neutral-200 shadow-xl rounded-r-md m-5 hover:scale-105 transition-all duration-200 min-h-max"
     >
-      <h1 className="text-xl font-semibold text-purple-700">{task.tittle}</h1>
+      <h1 className="text-xl font-semibold text-blue-700">{task.tittle}</h1>
       <p className="text-sm text-neutral-600">{task.description}</p>
       <div>
         <button
           onClick={() => taskDone(task, false)}
-          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-green-700"
+          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-green-700 hover:bg-green-800 transition-all duration-200"
         >
           Realizar
         </button>
@@ -20,13 +20,13 @@ function Task({ task, taskDone, deleteTask, setTaskModifier, setTaskForEdit }) {
             await setTaskForEdit(task);
             setTaskModifier(true);
           }}
-          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-blue-700"
+          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-blue-700 hover:bg-blue-800 transition-all duration-200"
         >
           Editar
         </button>
         <button
           onClick={() => deleteTask(task._id)}
-          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-red-600"
+          className="w-auto p-1.5 text-sm text-white m-1 rounded-md bg-red-600 hover:bg-red-700 transition-all duration-200"
         >
           Eliminar
         </button>

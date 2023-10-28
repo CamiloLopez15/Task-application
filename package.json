@@ -15,9 +15,11 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "framer-motion": "^10.16.4",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.0",
     "morgan": "^1.10.0",
+    "react-intersection-observer": "^9.5.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {

@@ -46,127 +46,132 @@ function Profile() {
       setTimeout(() => setChangesLoaded(null), 5000);
       reset({ password: "", confirmPassword: "" });
       await axios.post("/logout");
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   });
 
   return (
-    <div>
-      <Menu />
-      {errorsPassword.map((error, i) => {
-        return (
-          <p
-            className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
-            key={i}
-          >
-            {error}
+    <>
+        <Menu />
+      <div className="w-full flex flex-col">
+        {errorsPassword.map((error, i) => {
+          return (
+            <p
+              className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
+              key={i}
+            >
+              {error}
+            </p>
+          );
+        })}
+        {changesLoaded ? (
+          <p className="text-green-500 w-[46.6%] rounded-md text-left bg-green-200 p-1 mx-4 mt-4">
+            {changesLoaded}
           </p>
-        );
-      })}
-      {changesLoaded ? (
-        <p className="text-green-500 w-[46.6%] rounded-md text-left bg-green-200 p-1 mx-4 mt-4">
-          {changesLoaded}
-        </p>
-      ) : (
-        ""
-      )}
-      <section className="p-4">
-        <h1 className="text-md md:font-extrabold font-semibold text-center md:text-left md:w-[60%] w-full p-4 bg-purple-700 text-white rounded-md">
-          Actualizar nombre de usuario y email
-        </h1>
-        <form className="flex flex-col p-4 md:w-50% w-full" onSubmit={onSubmit}>
-          <div className="flex flex-col md:flex-row w-[100%] items-center justify-center md:justify-normal">
-            <span className="inline-block mr-2 md:w-[6%] w-full font-medium">
-              Usuario:
-            </span>
-            <input
-              type="text"
-              className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400"
-              {...register("username")}
-            />
-          </div>
-          <div className="flex flex-col md:flex-row w-[100%] items-center justify-center md:justify-normal">
-            <span className="inline-block mr-2 md:w-[6%] w-full font-medium">
-              Email:
-            </span>
-            <input
-              type="email"
-              className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400"
-              {...register("email")}
-            />
-          </div>
-          <button
-            type="submit"
-            className="p-1.5 bg-sky-600 text-white rounded-md md:w-[12%]"
+        ) : (
+          ""
+        )}
+        <section className="p-4 flex flex-col items-center w-full">
+          <h1 className="text-md md:font-extrabold font-semibold text-center md:text-left md:w-[60%] w-full p-4 bg-blue-700 text-white rounded-md">
+            Actualizar nombre de usuario y email
+          </h1>
+          <form
+            className="flex flex-col p-4 md:w-50% w-full items-center"
+            onSubmit={onSubmit}
           >
-            Guardar cambios
-          </button>
-        </form>
-      </section>
-      <section className="p-4">
-        <h1 className="text-md md:font-extrabold font-semibold text-center md:text-left md:w-[60%] w-full p-4 bg-purple-700 text-white rounded-md">
-          Actualizar tu contraseña
-        </h1>
-        <form
-          className="flex flex-col p-4 md:w-50% w-full"
-          onSubmit={onSubmitPassword}
-        >
-          {errorsPassword.map((error, i) => {
-            return (
-              <p
-                className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
-                key={i}
-              >
-                {error}
-              </p>
-            );
-          })}
-          <div className="flex flex-col md:flex-row w-[100%] items-center justify-center md:justify-normal">
-            <span className="inline-block mr-2 md:w-[16%] w-full font-medium">
-              Nueva contraseña:
-            </span>
-            <input
-              type="password"
-              className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400"
-              {...register("password", {
-                minLength: {
-                  value: 8,
-                  message: "Ingresa al menos 8 caracteres",
-                },
-              })}
-            />
-            {errors.password && (
-              <p className="text-red-500 text-left p-1 rounded-md ml-2">
-                La contraseña es muy corta
-              </p>
-            )}
-          </div>
-          <div className="flex flex-col md:flex-row w-[100%] items-center justify-center md:justify-normal">
-            <span className="inline-block mr-2 md:w-[16%] w-full font-medium">
-              Confirma tu contraseña:
-            </span>
-            <input
-              type="password"
-              className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-purple-300 bg-transparent focus:outline-purple-400"
-              {...register("confirmPassword")}
-            />
-            {errors.confirmPassword && (
-              <p className="text-red-500 text-left p-1 rounded-md ml-2">
-                La contraseña es muy corta
-              </p>
-            )}
-          </div>
-          <button
-            type="submit"
-            className="p-1.5 bg-sky-600 text-white rounded-md md:w-[12%]"
+            <div className="flex flex-col md:flex-row w-[100%] items-center justify-center">
+              <span className="inline-block mr-2 md:w-[6%] w-full font-medium">
+                Usuario:
+              </span>
+              <input
+                type="text"
+                className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-blue-300 bg-transparent focus:outline-blue-400"
+                {...register("username")}
+              />
+            </div>
+            <div className="flex flex-col md:flex-row w-[100%] items-center justify-center">
+              <span className="inline-block mr-2 md:w-[6%] w-full font-medium">
+                Email:
+              </span>
+              <input
+                type="email"
+                className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-blue-300 bg-transparent focus:outline-blue-400"
+                {...register("email")}
+              />
+            </div>
+            <button
+              type="submit"
+              className="p-1.5 bg-sky-600 text-white rounded-md md:w-[12%]"
+            >
+              Guardar cambios
+            </button>
+          </form>
+        </section>
+        <section className="p-4 flex flex-col items-center w-full">
+          <h1 className="text-md md:font-extrabold font-semibold text-center md:text-left md:w-[60%] w-full p-4 bg-blue-700 text-white rounded-md">
+            Actualizar tu contraseña
+          </h1>
+          <form
+            className="flex flex-col p-4 md:w-50% w-full items-center"
+            onSubmit={onSubmitPassword}
           >
-            Guardar cambios
-          </button>
-        </form>
-      </section>
-    </div>
+            {errorsPassword.map((error, i) => {
+              return (
+                <p
+                  className="text-red-500 w-[46.6%] rounded-md text-left bg-red-200 p-1"
+                  key={i}
+                >
+                  {error}
+                </p>
+              );
+            })}
+            <div className="flex flex-col md:flex-row w-[100%] items-center justify-center">
+              <span className="inline-block mr-2 md:w-[16%] w-full font-medium">
+                Nueva contraseña:
+              </span>
+              <input
+                type="password"
+                className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-blue-300 bg-transparent focus:outline-blue-400"
+                {...register("password", {
+                  minLength: {
+                    value: 8,
+                    message: "Ingresa al menos 8 caracteres",
+                  },
+                })}
+              />
+              {errors.password && (
+                <p className="text-red-500 text-left p-1 rounded-md ml-2">
+                  La contraseña es muy corta
+                </p>
+              )}
+            </div>
+            <div className="flex flex-col md:flex-row w-[100%] items-center justify-center">
+              <span className="inline-block mr-2 md:w-[16%] w-full font-medium">
+                Confirma tu contraseña:
+              </span>
+              <input
+                type="password"
+                className="md:w-[30%] w-full rounded-md p-1.5 my-2 border bg-gray-200 border-blue-300 bg-transparent focus:outline-blue-400"
+                {...register("confirmPassword")}
+              />
+              {errors.confirmPassword && (
+                <p className="text-red-500 text-left p-1 rounded-md ml-2">
+                  La contraseña es muy corta
+                </p>
+              )}
+            </div>
+            <button
+              type="submit"
+              className="p-1.5 bg-sky-600 text-white rounded-md md:w-[12%]"
+            >
+              Guardar cambios
+            </button>
+          </form>
+        </section>
+      </div>
+    </>
   );
 }
 
