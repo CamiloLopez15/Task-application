@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { FaSignOutAlt, FaUser } from "react-icons/fa";
 import { PiTargetBold } from "react-icons/pi";
+import { BiLogOut } from "react-icons/bi";
 import axios from "./../api/axios.js";
 import { useState } from "react";
 import { UseAuth } from "./../Context/authContext";
@@ -12,7 +13,7 @@ function Menu() {
   const logout = async () => {
     await axios.post("/logout");
     console.log("Cerrando sesión");
-    window.location.reload()
+    window.location.reload();
   };
   return (
     <nav className="flex justify-between items-center w-full bg-blue-800 p-4">
@@ -56,7 +57,7 @@ function Menu() {
         <ul
           className={`${
             responsiveMenu ? "left-0 flex" : "left-[200%] hidden"
-          } w-full flex-col top-16 right-0 absolute bg-purple-700 justify-evenly items-center font-onest text-slate-50 md:hidden transition-all duration-500`}
+          } w-full flex-col top-16 right-0 absolute bg-blue-800 justify-evenly items-center font-onest text-slate-50 md:hidden transition-all duration-500`}
         >
           <li className="hover:decoration-solid hover:decoration-1 hover:underline my-1.5">
             <Link
@@ -77,14 +78,23 @@ function Menu() {
             </Link>
           </li>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline my-1.5">
-            <Link
-              className="w-full flex flex-row justify-center items-center text-center"
-              onClick={() => logout()}
-              to="/"
-            >
-              {" "}
-              <FaSignOutAlt className="mr-2" /> Cerra sesión
-            </Link>
+            {isAuthenticated ? (
+              <Link
+                className="w-full flex flex-row justify-center items-center text-center"
+                onClick={() => logout()}
+                to="/"
+              >
+                {" "}
+                <BiLogOut className="mr-2" /> Cerra sesión
+              </Link>
+            ) : (
+              <Link
+                className="w-full flex flex-row justify-center items-center text-center"
+                to="/login"
+              >
+                <FaSignOutAlt className="mr-2" /> Inicia sesión
+              </Link>
+            )}
           </li>
         </ul>
       </div>

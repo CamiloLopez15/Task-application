@@ -31,12 +31,12 @@ function Homepages() {
   return (
     <div>
       <Menu />
-      <header className="w-full min-h-max grid grid-cols-2 flex-row bg-neutral-200 rounded-2xl">
+      <header className="w-full min-h-max md:grid md:grid-cols-2 md:place-content-center bg-neutral-200 rounded-2xl md:pt-6 lg:pt-2">
         <motion.div
           initial={{ marginLeft: -1000 }}
           animate={{ marginLeft: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center flex-col w-full h-full px-12 col-span-1"
+          className="flex justify-center flex-col w-full h-full lg:px-12 col-span-full md:col-span-1 p-5"
         >
           <h1 className="text-3xl font-bold font-gabarito mb-5 text-blue-800">
             Task Application
@@ -48,13 +48,13 @@ function Homepages() {
             sentirás abrumado por tus responsabilidades diarias.
           </p>
         </motion.div>
-        <div className="flex w-full h-96 justify-end col-span-1">
+        <div className="hidden md:flex w-full lg:h-96 md:h-72  justify-end items-end col-span-1">
           <motion.img
             initial={{ marginRight: -1000 }}
             animate={{ marginRight: 0 }}
             transition={{ duration: 0.6 }}
             src="/working-banner.png"
-            className="w-auto h-[100%] rounded-b-2xl"
+            className="w-auto lg:h-[100%] md:h-72 rounded-b-2xl"
           />
         </div>
       </header>
@@ -65,7 +65,7 @@ function Homepages() {
         className={`mt-32 w-full flex flex-col items-center`}
       >
         <PiStarFourFill className="text-3xl p-2 h-auto w-auto bg-neutral-300 rounded-xl text-blue-800 mb-5" />
-        <p className="font-gabarito text-lg w-[70%] text-center">
+        <p className="font-gabarito text-lg w-[70%] md:text-center text-justify">
           Con nuestra aplicación, puedes crear, actualizar y eliminar tareas de
           manera sencilla y eficiente. Imagina tener todas tus tareas
           importantes al alcance de tu mano, sin la necesidad de anotarlas en
