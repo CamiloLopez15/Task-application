@@ -8,7 +8,7 @@
     "dev": "nodemon ./src/index.js"
   },
   "keywords": [],
-  "author": "Camilo López - Natalia Sanchez - Kylie Camargo - Kenner Pacheco",
+  "author": "Camilo López",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
