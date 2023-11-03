@@ -80,7 +80,11 @@ Los demás archivos en esta carpeta son la inicialización de la aplicación, la
 Acá encontraremos todos los archivos y carpetas que estén relacionados con el Front-end de la aplicación. Estos son:
 
 - **Public:** Acá se almacenan todas las imágenes que se usa en la aplicación.
-- **Src:** Acá van todos los componentes y partes importantes de la aplicación. Estos son: - **Api:** Se definen todas las llamadas de las APIs y ajustes de _axios_ - **Components:** Acá se almacenan todos los componentes reutilizables en toda la aplicación - **Context:** Acá se crea todos estados que se usan frecuentemente en toda la aplicación, como la autenticación del usuario, errores, etc. - **Pages:** Se almacenan todas las páginas de la aplicación que van cambiando con la URL.
+- **Src:** Acá van todos los componentes y partes importantes de la aplicación. Estos son: 
+    - **Api:** Se definen todas las llamadas de las APIs y ajustes de _axios_ 
+    - **Components:** Acá se almacenan todos los componentes reutilizables en toda la aplicación 
+    - **Context:** Acá se crea todos estados que se usan frecuentemente en toda la aplicación, como la autenticación del usuario, errores, etc. 
+    - **Pages:** Se almacenan todas las páginas de la aplicación que van cambiando con la URL.
   Los otros archivos son la inicialización del _CSS_, _HTML_, React, protección de rutas, configuración de librerías, _frameworks_, etc.
 
 <h2 id="instalacion">¿Como instalarlo?</h2>
