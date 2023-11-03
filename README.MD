@@ -81,8 +81,8 @@ Acá encontraremos todos los archivos y carpetas que estén relacionados con el 
 
 - **Public:** Acá se almacenan todas las imágenes que se usa en la aplicación.
 - **Src:** Acá van todos los componentes y partes importantes de la aplicación. Estos son: 
-    - **Api:** Se definen todas las llamadas de las APIs y ajustes de _axios_ 
-    - **Components:** Acá se almacenan todos los componentes reutilizables en toda la aplicación 
+    - **Api:** Se definen todas las llamadas de las APIs y ajustes de _axios_.
+    - **Components:** Acá se almacenan todos los componentes reutilizables en toda la aplicación.
     - **Context:** Acá se crea todos estados que se usan frecuentemente en toda la aplicación, como la autenticación del usuario, errores, etc. 
     - **Pages:** Se almacenan todas las páginas de la aplicación que van cambiando con la URL.
   Los otros archivos son la inicialización del _CSS_, _HTML_, React, protección de rutas, configuración de librerías, _frameworks_, etc.
@@ -92,9 +92,11 @@ Acá encontraremos todos los archivos y carpetas que estén relacionados con el 
 Para instalar el proyecto necesitas seguir los siguientes pasos:
 
 - Clonar el repositorio de Github en tu máquina.
-- Abrir en el terminal, entrar en la carpeta raíz y escribir **_npm install_**
-- Luego entrar en la carpeta desde la terminal **_client_** y escribir **_npm install_**
-- Luego en la carpeta **_src_** una vez ahí, crear un archivo llamado **_config.js_** , define ahí las siguientes variables y exportarlas: - **TOKEN_SECRET:** La clave del token, intenta que sea de 32 caracteres. - **URI_BACKEND:** crear una base de datos en MongoDB atlas y coloca el url aquí
+- Abrir en el terminal, entrar en la carpeta raíz y escribir **_npm install_**.
+- Luego entrar en la carpeta desde la terminal **_client_** y escribir **_npm install_**.
+- Luego en la carpeta **_src_** una vez ahí, crear un archivo llamado **_config.js_** , define ahí las siguientes variables y exportarlas: 
+- **TOKEN_SECRET:** La clave del token, intenta que sea de 32 caracteres. 
+- **URI_BACKEND:** crear una base de datos en MongoDB atlas y coloca el url aquí.
 <h2 id="demo">Demo</h2>
 
 <h2 id="autores">Autores</h2>
