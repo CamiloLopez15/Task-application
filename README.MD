@@ -57,7 +57,7 @@ Para la realización de este proyecto se usó tecnologías para agilizar la prod
 19. #### Morgan
     Se usa para generar mensajes en la consola del **Back-end** sobre las peticiones que se hacen a este.
 20. #### Zod
-        Se usa para facilitar la creación de esquemas al momento de modelar los datos.
+    Se usa para facilitar la creación de esquemas al momento de modelar los datos.
     <h2 id="codigo">Explicación del código de la aplicación</h2>
 
 El código se divide en dos carpetas principales **_src_** y **_client_**.
@@ -95,9 +95,8 @@ Para instalar el proyecto necesitas seguir los siguientes pasos:
 - Abrir en el terminal, entrar en la carpeta raíz y escribir **_npm install_**.
 - Luego entrar en la carpeta desde la terminal **_client_** y escribir **_npm install_**.
 - Luego en la carpeta **_src_** una vez ahí, crear un archivo llamado **_config.js_** , define ahí las siguientes variables y exportarlas: 
-- **TOKEN_SECRET:** La clave del token, intenta que sea de 32 caracteres. 
-- **URI_BACKEND:** crear una base de datos en MongoDB atlas y coloca el url aquí.
-<h2 id="demo">Demo</h2>
+    - **TOKEN_SECRET:** La clave del token, intenta que sea de 32 caracteres. 
+    - **URI_BACKEND:** crear una base de datos en MongoDB atlas y coloca el url aquí.
 
 <h2 id="autores">Autores</h2>
 
