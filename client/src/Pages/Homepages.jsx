@@ -5,6 +5,7 @@ import { PiStarFourFill } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import workingBanner from "/working-banner.png"
 
 function Homepages() {
   const descriptionControls = useAnimation();
@@ -53,7 +54,7 @@ function Homepages() {
             initial={{ marginRight: -1000 }}
             animate={{ marginRight: 0 }}
             transition={{ duration: 0.6 }}
-            src="/working-banner.png"
+            src={workingBanner}
             className="w-auto lg:h-[100%] md:h-72 rounded-b-2xl"
           />
         </div>

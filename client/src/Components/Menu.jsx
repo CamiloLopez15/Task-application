@@ -18,7 +18,7 @@ function Menu() {
   return (
     <nav className="flex justify-between items-center w-full bg-blue-800 p-4">
       <Link
-        to="/"
+        to="/Task-application/"
         className="flex text-2xl font-gabarito font-extrabold text-slate-50 tracking-wide"
       >
         <img
@@ -37,19 +37,19 @@ function Menu() {
         {/* Menu */}
         <ul className="md:flex w-80 flex-row justify-evenly items-center font-onest text-slate-50 hidden">
           <li className="hover:decoration-solid hover:decoration-1 hover:underline">
-            <Link to="/tasks">Tareas</Link>
+            <Link to="/Task-application/tasks">Tareas</Link>
           </li>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline">
-            <Link to="/profile">Profile</Link>
+            <Link to="/Task-application/profile">Profile</Link>
           </li>
           <li className="hover:decoration-solid hover:decoration-1 hover:underline">
             {isAuthenticated ? (
-              <Link onClick={() => logout()} to="/">
+              <Link onClick={() => logout()} to="/Task-application/">
                 {" "}
                 Cerrar sesión
               </Link>
             ) : (
-              <Link to="/login"> Inicia sesión</Link>
+              <Link to="/Task-application/login"> Inicia sesión</Link>
             )}
           </li>
         </ul>
@@ -61,7 +61,7 @@ function Menu() {
         >
           <li className="hover:decoration-solid hover:decoration-1 hover:underline my-1.5">
             <Link
-              to="/tasks"
+              to="/Task-application/tasks"
               className="w-full flex flex-row justify-center items-center text-center"
             >
               <PiTargetBold className="mr-2" />
@@ -71,7 +71,7 @@ function Menu() {
           <li className="hover:decoration-solid hover:decoration-1 hover:underline my-1.5">
             <Link
               className="w-full flex flex-row justify-center items-center text-center"
-              to="/profile"
+              to="/Task-application/profile"
             >
               <FaUser className="mr-2" />
               Perfil
@@ -82,7 +82,7 @@ function Menu() {
               <Link
                 className="w-full flex flex-row justify-center items-center text-center"
                 onClick={() => logout()}
-                to="/"
+                to="/Task-application/"
               >
                 {" "}
                 <BiLogOut className="mr-2" /> Cerra sesión
@@ -90,7 +90,7 @@ function Menu() {
             ) : (
               <Link
                 className="w-full flex flex-row justify-center items-center text-center"
-                to="/login"
+                to="/Task-application/login"
               >
                 <FaSignOutAlt className="mr-2" /> Inicia sesión
               </Link>
