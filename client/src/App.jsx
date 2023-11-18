@@ -14,13 +14,13 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepages />} />
-          <Route path="/spinner" element={<SpinnerLoading />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/Task-application/" element={<Homepages />} />
+          <Route path="/Task-application/spinner" element={<SpinnerLoading />} />
+          <Route path="/Task-application/login" element={<Login />} />
+          <Route path="/Task-application/register" element={<Register />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/tasks" element={<Taskspage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/Task-application/tasks" element={<Taskspage />} />
+            <Route path="/Task-application/profile" element={<Profile />} />
           </Route>
         </Routes>
       </BrowserRouter>
