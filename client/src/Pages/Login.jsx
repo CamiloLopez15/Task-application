@@ -15,7 +15,7 @@ function Login() {
   } = UseAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    if (isAuthenticated) return navigate("/tasks");
+    if (isAuthenticated) return navigate("/Task-application/tasks");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
@@ -70,7 +70,7 @@ function Login() {
           </p>
         )}
         <Link
-          to="/register"
+          to="/Task-application/register"
           className="text-sm text-left w-[80%] text-blue-500 hover:text-blue-900 my-2"
         >
           ¿No tienes una cuenta?

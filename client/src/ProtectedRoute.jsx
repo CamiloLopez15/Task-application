@@ -5,7 +5,7 @@ import SpinnerLoading from "./Components/SpinnerLoading";
 function ProtectedRoute() {
   const { isAuthenticated, loading } = UseAuth();
   if(loading) return <SpinnerLoading />
-  if(!isAuthenticated && !loading) return <Navigate to="/login" replace />
+  if(!isAuthenticated && !loading) return <Navigate to="/Task-application/login" replace />
   if (isAuthenticated && !loading) return <Outlet />;
 }
 
